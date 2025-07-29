@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "Fanuc LS Language (Simplified UDL)",
+    "name": "CodeFanuc Notepad++ UDL Colours",
     "scopeName": "source.fanuctp_ls",
     "fileTypes": [
       "ls"
@@ -111,7 +111,8 @@
                         "1": { "name": "punctuation.bracket.square.character.fanuctp_ls" },
                         "2": { "name": "punctuation.bracket.square.character.fanuctp_ls" }
                     },
-                    "contentName": "meta.content.bracket.square.fanuctp_ls"
+                    "contentName": "meta.content.bracket.square.fanuctp_ls",
+                    "patterns": [ { "include": "#delimiters" } ]
                 },
                 {
                     "name": "punctuation.bracket.parenthesis.fanuctp_ls",
@@ -121,7 +122,8 @@
                         "1": { "name": "punctuation.bracket.parenthesis.character.fanuctp_ls" },
                         "2": { "name": "punctuation.bracket.parenthesis.character.fanuctp_ls" }
                     },
-                    "contentName": "meta.content.bracket.parenthesis.fanuctp_ls"
+                    "contentName": "meta.content.bracket.parenthesis.fanuctp_ls",
+                    "patterns": [ { "include": "#delimiters" } ]
                 },
                 {
                     "name": "punctuation.delimiter.udl-1.fanuctp_ls",
