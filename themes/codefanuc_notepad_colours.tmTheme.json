@@ -1,45 +1,16 @@
 {
-    "name": "Fanuc Theme (Simplified UDL)",
+    "name": "CodeFanuc Notepad++ UDL Colours",
     "type": "vs-dark",
     "colors": {
       "editor.foreground": "#FFFFFF",
-      "editor.background": "#000000"
+      "editor.background": "#1E1E1E"
     },
     "tokenColors": [
       {
-        "scope": "source.fanuctp_ls punctuation.bracket.square.character.fanuctp_ls",
+        "scope": "meta.default.fanuctp_ls",
         "settings": {
-          "foreground": "#FF9B37"
-        }
-      },
-      {
-        "scope": "source.fanuctp_ls meta.content.bracket.square.fanuctp_ls",
-        "settings": {
-          "foreground": "#FF9B37"
-        }
-      },
-      {
-        "scope": "source.fanuctp_ls punctuation.bracket.parenthesis.character.fanuctp_ls",
-        "settings": {
-          "foreground": "#FFA346"
-        }
-      },
-      {
-        "scope": "source.fanuctp_ls meta.content.bracket.parenthesis.fanuctp_ls",
-        "settings": {
-          "foreground": "#FFA346"
-        }
-      },
-      {
-        "scope": [
-          "punctuation.bracket",
-          "punctuation.section",
-          "punctuation.other",
-          "punctuation.square",
-          "punctuation.parenthesis"
-        ],
-        "settings": {
-          "foreground": "#FFA346" 
+          "foreground": "#FFFFFF",
+          "background": "#000000"
         }
       },
       {
@@ -48,25 +19,20 @@
           "comment.line.udl-01.fanuctp_ls",
           "comment.line.udl-02.fanuctp_ls",
           "comment.line.udl-03.fanuctp_ls",
-          "comment.line.udl-04.fanuctp_ls",
-          "comment.line.remark.fanuctp_ls",
-          "comment.line.slash.fanuctp_ls"
+          "comment.line.udl-04.fanuctp_ls"
         ],
-        "settings": {
-          "foreground": "#00FF80"
-        }
-      },
-      {
-        "scope": "comment.line.double-dash.fanuctp_ls",
         "settings": {
           "foreground": "#00FF00"
         }
       },
       {
-        "scope": "meta.default.fanuctp_ls",
+        "scope": [
+          "comment.line.double-dash.fanuctp_ls",
+          "comment.line.remark.fanuctp_ls",
+          "comment.line.slash.fanuctp_ls"
+        ],
         "settings": {
-          "foreground": "#FFFFFF",
-          "background": "#000000"
+          "foreground": "#00FF80"
         }
       },
       {
@@ -105,6 +71,106 @@
         "settings": {
           "foreground": "#1D61FE",
           "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "punctuation.bracket.square.character.fanuctp_ls",
+        "settings": {
+          "foreground": "#FF9B37"
+        }
+      },
+      {
+        "scope": "punctuation.bracket.parenthesis.character.fanuctp_ls",
+        "settings": {
+          "foreground": "#FFA346"
+        }
+      },
+      {
+        "scope": "meta.content.bracket.square.fanuctp_ls",
+        "settings": {
+          "foreground": "#FF9B37"
+        }
+      },
+      {
+        "scope": "meta.content.bracket.parenthesis.fanuctp_ls",
+        "settings": {
+          "foreground": "#FFA346"
+        }
+      },
+      {
+        "scope": "meta.content.bracket.square.fanuctp_ls punctuation.bracket.square.character.fanuctp_ls",
+        "settings": {
+          "foreground": "#BB5E00"
+        }
+      },
+      {
+        "scope": "meta.content.bracket.parenthesis.fanuctp_ls punctuation.bracket.parenthesis.character.fanuctp_ls",
+        "settings": {
+          "foreground": "#BB5E00"
+        }
+      },
+      {
+        "scope": "meta.content.bracket.parenthesis.fanuctp_ls punctuation.bracket.square.character.fanuctp_ls",
+        "settings": {
+          "foreground": "#BB5E00"
+        }
+      },
+      {
+        "scope": "meta.content.bracket.square.fanuctp_ls punctuation.bracket.parenthesis.character.fanuctp_ls",
+        "settings": {
+          "foreground": "#BB5E00"
+        }
+      },
+      {
+        "scope": "meta.content.bracket.square.fanuctp_ls meta.content.bracket.square.fanuctp_ls",
+        "settings": {
+          "foreground": "#BB5E00"
+        }
+      },
+      {
+        "scope": "meta.content.bracket.parenthesis.fanuctp_ls meta.content.bracket.parenthesis.fanuctp_ls",
+        "settings": {
+          "foreground": "#BB5E00"
+        }
+      },
+      {
+        "scope": "meta.content.bracket.square.fanuctp_ls meta.content.bracket.parenthesis.fanuctp_ls",
+        "settings": {
+          "foreground": "#BB5E00"
+        }
+      },
+      {
+        "scope": "meta.content.bracket.parenthesis.fanuctp_ls meta.content.bracket.square.fanuctp_ls",
+        "settings": {
+          "foreground": "#BB5E00"
+        }
+      },
+      {
+        "scope": [
+          "punctuation",
+          "punctuation.definition",
+          "punctuation.separator",
+          "punctuation.other",
+          "punctuation.section",
+          "punctuation.section.grouping"
+        ],
+        "settings": {
+          "foreground": "#FFA346"
+        }
+      },
+      {
+        "scope": "punctuation.definition.string.quote.fanuctp_ls",
+        "settings": {
+          "foreground": "#8000FF"
+        }
+      },
+      {
+        "scope": [
+          "string.quoted.single.fanuctp_ls",
+          "string.quoted.double.fanuctp_ls"
+        ],
+        "settings": {
+          "foreground": "#FFFFFF"
         }
       },
       {
@@ -153,21 +219,6 @@
         "scope": "punctuation.delimiter.udl-8.fanuctp_ls",
         "settings": {
           "foreground": "#808040"
-        }
-      },
-      {
-        "scope": "punctuation.definition.string.quote.fanuctp_ls",
-        "settings": {
-          "foreground": "#8000FF"
-        }
-      },
-      {
-        "scope": [
-          "string.quoted.single.fanuctp_ls",
-          "string.quoted.double.fanuctp_ls"
-        ],
-        "settings": {
-          "foreground": "#FFFFFF"
         }
       },
       {
