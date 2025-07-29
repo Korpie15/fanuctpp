@@ -1,22 +1,111 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "CodeFanuc Notepad++ UDL Colours",
+    "name": "Fanuc LS Language",
     "scopeName": "source.fanuctp_ls",
     "fileTypes": [
       "ls"
     ],
     "patterns": [
-        { "include": "#delimiters" },
-        { "include": "#comments" },
-        { "include": "#numbers" },
-        { "include": "#operators" },
-        { "include": "#keywords1" },
-        { "include": "#keywords2" },
-        { "include": "#keywords3" },
-        { "include": "#keywords4" },
-        { "include": "#strings" }
+        { "include": "#outerBrackets" },
+        { "include": "#main_patterns" }
     ],
     "repository": {
+        "outerBrackets": {
+            "patterns": [
+                {
+                    "name": "meta.bracket.outer.fanuctp_ls",
+                    "begin": "(\\[)",
+                    "beginCaptures": {
+                        "1": { "name": "punctuation.bracket.square.outer.fanuctp_ls" }
+                    },
+                    "end": "(\\])",
+                    "endCaptures": {
+                        "1": { "name": "punctuation.bracket.square.outer.fanuctp_ls" }
+                    },
+                    "patterns": [
+                        { "include": "#nestedBrackets" },
+                        { "include": "#main_patterns" }
+                    ]
+                },
+                {
+                    "name": "meta.paren.outer.fanuctp_ls",
+                    "begin": "(\\()",
+                    "beginCaptures": {
+                        "1": { "name": "punctuation.bracket.parenthesis.outer.fanuctp_ls" }
+                    },
+                    "end": "(\\))",
+                    "endCaptures": {
+                        "1": { "name": "punctuation.bracket.parenthesis.outer.fanuctp_ls" }
+                    },
+                    "patterns": [
+                        { "include": "#nestedBrackets" },
+                        { "include": "#main_patterns" }
+                    ]
+                }
+            ]
+        },
+        "nestedBrackets": {
+            "patterns": [
+                {
+                    "name": "meta.bracket.nested.fanuctp_ls",
+                    "begin": "(\\[)",
+                    "beginCaptures": {
+                        "1": { "name": "punctuation.bracket.square.nested.fanuctp_ls" }
+                    },
+                    "end": "(\\])",
+                    "endCaptures": {
+                        "1": { "name": "punctuation.bracket.square.nested.fanuctp_ls" }
+                    },
+                    "patterns": [
+                        { "include": "#nestedBrackets" },
+                        { "include": "#main_patterns" }
+                    ]
+                },
+                {
+                    "name": "meta.paren.nested.fanuctp_ls",
+                    "begin": "(\\()",
+                    "beginCaptures": {
+                        "1": { "name": "punctuation.bracket.parenthesis.nested.fanuctp_ls" }
+                    },
+                    "end": "(\\))",
+                    "endCaptures": {
+                        "1": { "name": "punctuation.bracket.parenthesis.nested.fanuctp_ls" }
+                    },
+                    "patterns": [
+                        { "include": "#nestedBrackets" },
+                        { "include": "#main_patterns" }
+                    ]
+                }
+            ]
+        },
+        "main_patterns": {
+            "patterns": [
+                { "include": "#comments" },
+                { "include": "#numbers" },
+                { "include": "#operators" },
+                { "include": "#keywords1" },
+                { "include": "#keywords2" },
+                { "include": "#keywords3" },
+                { "include": "#keywords4" },
+                { "include": "#delimiters" },
+                { "include": "#strings" },
+                { "include": "#folders" },
+                { "include": "#newlineConstant" },
+                { "include": "#namesConstant" },
+                { "include": "#movetypeKeyword" },
+                { "include": "#onOffKeywords" },
+                { "include": "#headerspaceKeyword" },
+                { "include": "#headerKeyword" },
+                {
+                    "name": "keyword.variable.fanuctp_ls",
+                    "match": "\\$\\w+"
+                },
+                {
+                    "name": "keyword.label.fanuctp_ls",
+                    "match": "(?<=\\[\\d+:)(.*?)(?=\\])"
+                }
+            ]
+        },
         "comments": {
             "patterns": [
                 {
@@ -72,7 +161,7 @@
         "keywords1": {
             "patterns": [
                 {
-                    "name": "keyword.udl-1.fanuctp_ls",
+                    "name": "keyword.directive.udl-1.fanuctp_ls",
                     "match": "\\b(/PROG|/ATTR|/MN|/POS|/END)\\b"
                 }
             ]
@@ -80,7 +169,7 @@
         "keywords2": {
             "patterns": [
                 {
-                    "name": "keyword.udl-2.fanuctp_ls",
+                    "name": "keyword.label-definition.udl-2.fanuctp_ls",
                     "match": "\\bLBL\\b"
                 }
             ]
@@ -88,7 +177,7 @@
         "keywords3": {
             "patterns": [
                 {
-                    "name": "keyword.udl-3.fanuctp_ls",
+                    "name": "keyword.control.udl-3.fanuctp_ls",
                     "match": "\\b(L|J|CALL|JMP|IF|ELSE|ENDIF|FOR|ENDFOR|UFRAME_NUM|UTOOL_NUM|UALM|LPOS|JPOS|THEN|END_IF|UFRAME)\\b"
                 }
             ]
@@ -96,35 +185,13 @@
         "keywords4": {
             "patterns": [
                 {
-                    "name": "keyword.udl-4.fanuctp_ls",
+                    "name": "variable.io-register.udl-4.fanuctp_ls",
                     "match": "\\b(R|AR|PR|P|UF|DI|DO|RI|RO|GI|GO|UI|UO)\\b"
                 }
             ]
         },
         "delimiters": {
             "patterns": [
-                {
-                    "name": "punctuation.bracket.square.fanuctp_ls",
-                    "begin": "(\\[)",
-                    "end": "(\\])",
-                    "captures": {
-                        "1": { "name": "punctuation.bracket.square.character.fanuctp_ls" },
-                        "2": { "name": "punctuation.bracket.square.character.fanuctp_ls" }
-                    },
-                    "contentName": "meta.content.bracket.square.fanuctp_ls",
-                    "patterns": [ { "include": "#delimiters" } ]
-                },
-                {
-                    "name": "punctuation.bracket.parenthesis.fanuctp_ls",
-                    "begin": "(\\()",
-                    "end": "(\\))",
-                    "captures": {
-                        "1": { "name": "punctuation.bracket.parenthesis.character.fanuctp_ls" },
-                        "2": { "name": "punctuation.bracket.parenthesis.character.fanuctp_ls" }
-                    },
-                    "contentName": "meta.content.bracket.parenthesis.fanuctp_ls",
-                    "patterns": [ { "include": "#delimiters" } ]
-                },
                 {
                     "name": "punctuation.delimiter.udl-1.fanuctp_ls",
                     "match": "00\\[|02\\]"
@@ -176,6 +243,84 @@
                     "captures": {
                         "0": { "name": "punctuation.definition.string.quote.fanuctp_ls" }
                     }
+                }
+            ]
+        },
+        "folders": {
+            "patterns": [
+                {
+                    "name": "keyword.folding.code1.open.fanuctp_ls",
+                    "match": "\\bSELECT \" FOR\"\\b"
+                },
+                {
+                    "name": "keyword.folding.code1.close.fanuctp_ls",
+                    "match": "\\b(ELSE|ENDFOR)\\b"
+                },
+                {
+                    "name": "keyword.folding.code2.open.fanuctp_ls",
+                    "match": "\\bTHEN\\b"
+                },
+                {
+                    "name": "keyword.folding.code2.middle.fanuctp_ls",
+                    "match": "\\bELSE\\b"
+                },
+                {
+                    "name": "keyword.folding.code2.close.fanuctp_ls",
+                    "match": "\\bENDIF\\b"
+                }
+            ]
+        },
+        "newlineConstant": {
+            "patterns": [
+                {
+                    "name": "constant.newline.fanuctp_ls",
+                    "match": "^\\s*(\\d{1,4}):"
+                }
+            ]
+        },
+        "namesConstant": {
+            "patterns": [
+                {
+                    "name": "constant.names.fanuctp_ls",
+                    "match": "(?<=:\\s*[^:]*:)([^:\\]]+)(?=\\])"
+                }
+            ]
+        },
+        "movetypeKeyword": {
+            "patterns": [
+                {
+                    "name": "keyword.movetype.fanuctp_ls",
+                    "match": "(\\bCNT\\d+|\\bFINE|\\bACC\\d+)"
+                }
+            ]
+        },
+        "onOffKeywords": {
+            "patterns": [
+                {
+                    "name": "keyword.on.fanuctp_ls",
+                    "match": "\\b(ON|START)\\b"
+                },
+                {
+                    "name": "keyword.off.fanuctp_ls",
+                    "match": "\\b(OFF|STOP)\\b"
+                }
+            ]
+        },
+        "headerspaceKeyword": {
+            "patterns": [
+                {
+                    "name": "keyword.headerspace.fanuctp_ls",
+                    "begin": "/PROG",
+                    "end": "/MN",
+                    "patterns": [{ "include": "#main_patterns" }]
+                }
+            ]
+        },
+        "headerKeyword": {
+            "patterns": [
+                {
+                    "name": "keyword.header.fanuctp_ls",
+                    "match": "(\\b|\\/)(PROG|ATTR|APPL|MN|POS|END|Macro|MNEDITOR|DATE|TIME|READ|READ_WRITE|OWNER|COMMENT|PROG_SIZE|CREATE|MODIFIED|FILE_NAME|VERSION|LINE_COUNT|MEMORY_SIZE|PROTECT|TCD|STACK_SIZE|TASK_PRIORITY|TIME_SLICE|BUSY_LAMP_OFF|ABORT_REQUEST|PAUSE_REQUEST|DEFAULT_GROUP|CONTROL_CODE|LOCAL_REGISTERS|STORAGE|SHADOW)(\\b|\\.)"
                 }
             ]
         }
