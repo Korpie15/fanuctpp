@@ -3,7 +3,7 @@
     "type": "vs-dark",
     "colors": {
       "editor.foreground": "#FFFFFF",
-      "editor.background": "#1E1E1E"
+      "editor.background": "#000000"
     },
     "tokenColors": [
       {
@@ -15,11 +15,8 @@
       },
       {
         "scope": [
-          "comment.line.udl-00.fanuctp_ls",
-          "comment.line.udl-01.fanuctp_ls",
-          "comment.line.udl-02.fanuctp_ls",
-          "comment.line.udl-03.fanuctp_ls",
-          "comment.line.udl-04.fanuctp_ls"
+          "comment.line.exclamation.fanuctp_ls",
+          "comment.line.eg.fanuctp_ls"
         ],
         "settings": {
           "foreground": "#00FF00"
@@ -27,7 +24,6 @@
       },
       {
         "scope": [
-          "comment.line.double-dash.fanuctp_ls",
           "comment.line.remark.fanuctp_ls",
           "comment.line.slash.fanuctp_ls"
         ],
