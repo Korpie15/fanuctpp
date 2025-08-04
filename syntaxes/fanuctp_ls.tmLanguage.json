@@ -109,28 +109,12 @@
         "comments": {
             "patterns": [
                 {
-                    "name": "comment.line.udl-00.fanuctp_ls",
-                    "match": "00!"
+                    "name": "comment.line.exclamation.fanuctp_ls",
+                    "match": "!.*?(;|$)"
                 },
                 {
-                    "name": "comment.line.udl-01.fanuctp_ls",
-                    "match": "01"
-                },
-                {
-                    "name": "comment.line.udl-02.fanuctp_ls",
-                    "match": "02;"
-                },
-                {
-                    "name": "comment.line.udl-03.fanuctp_ls",
-                    "match": "03--eg:"
-                },
-                {
-                    "name": "comment.line.udl-04.fanuctp_ls",
-                    "match": "04;"
-                },
-                {
-                    "name": "comment.line.double-dash.fanuctp_ls",
-                    "match": "(--.*)$"
+                    "name": "comment.line.eg.fanuctp_ls",
+                    "match": "--eg:.*?(;|$)"
                 },
                 {
                     "name": "comment.line.remark.fanuctp_ls",
@@ -138,7 +122,7 @@
                 },
                 {
                     "name": "comment.line.slash.fanuctp_ls",
-                    "match": "//(.*)$"
+                    "match": "//.*$"
                 }
             ]
         },
