@@ -142,9 +142,9 @@
 				"path": "themes/codefanuc_theme.tmTheme.json"
 			},
 			{
-				"label": "CodeFanuc Notepad++ UDL Colours",
+				"label": "CodeFanuc CM Theme",
 				"uiTheme": "vs-dark",
-				"path": "themes/codefanuc_notepad_colours.tmTheme.json"
+				"path": "themes/codefanuc_cm_theme.tmTheme.json"
 			}
 		]
 	},
