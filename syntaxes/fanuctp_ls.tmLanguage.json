@@ -80,6 +80,10 @@
         },
         "main_patterns": {
             "patterns": [
+                {
+                    "name": "keyword.motion.fanuctp_ls",
+                    "match": "\\b[JL]\\b|(?i)mm/sec|%|FINE"
+                },
                 { "include": "#comments" },
                 { "include": "#numbers" },
                 { "include": "#operators" },
@@ -162,7 +166,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.udl-3.fanuctp_ls",
-                    "match": "\\b(L|J|CALL|JMP|IF|ELSE|ENDIF|FOR|ENDFOR|UFRAME_NUM|UTOOL_NUM|UALM|LPOS|JPOS|THEN|END_IF|UFRAME)\\b"
+                    "match": "\\b(CALL|JMP|IF|ELSE|ENDIF|FOR|ENDFOR|UFRAME_NUM|UTOOL_NUM|UALM|LPOS|JPOS|THEN|END_IF|UFRAME)\\b"
                 }
             ]
         },
